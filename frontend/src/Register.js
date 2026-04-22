@@ -9,11 +9,14 @@ function Register() {
   const navigate = useNavigate();
 
   const register = async () => {
-    awaitaxios.post("https://expensemanager-backend-2nhr.onrender.com/register", ..., {
-      name,
-      email,
-      password
-    });
+    await axios.post(
+      "https://expensemanager-backend-2nhr.onrender.com/register",
+      {
+        name,
+        email,
+        password
+      }
+    );
 
     alert("Registered Successfully");
     navigate("/login");
