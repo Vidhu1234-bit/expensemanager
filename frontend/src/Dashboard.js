@@ -10,7 +10,7 @@ function Dashboard() {
   const token = localStorage.getItem("token");
 
   const loadData = () => {
-    axios.get("http://localhost:5000/expenses", {
+   axios.get("https://expensemanager-backend-2nhr.onrender.com/expenses", ... {
       headers: { token }
     }).then((res) => setExpenses(res.data));
   };
@@ -20,8 +20,7 @@ function Dashboard() {
   }, [token]);
 
   const addExpense = async () => {
-    await axios.post(
-      "http://localhost:5000/expense",
+    await axios.post("https://expensemanager-backend-2nhr.onrender.com/expense", ...
       { title, amount, category },
       { headers: { token } }
     );

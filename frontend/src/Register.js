@@ -9,7 +9,7 @@ function Register() {
   const navigate = useNavigate();
 
   const register = async () => {
-    await axios.post("http://localhost:5000/register", {
+    awaitaxios.post("https://expensemanager-backend-2nhr.onrender.com/register", ..., {
       name,
       email,
       password

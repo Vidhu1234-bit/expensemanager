@@ -8,10 +8,13 @@ function Login() {
   const navigate = useNavigate();
 
   const login = async () => {
-    const res = await axios.post("http://localhost:5000/login", {
-      email,
-      password
-    });
+    const res = await axios.post(
+      "https://expensemanager-backend-2nhr.onrender.com/login",
+      {
+        email,
+        password
+      }
+    );
 
     localStorage.setItem("token", res.data.token);
 
@@ -26,7 +29,11 @@ function Login() {
       <input placeholder="Email" onChange={(e)=>setEmail(e.target.value)} />
       <br /><br />
 
-      <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
+      <input
+        type="password"
+        placeholder="Password"
+        onChange={(e)=>setPassword(e.target.value)}
+      />
       <br /><br />
 
       <button onClick={login}>Login</button>
